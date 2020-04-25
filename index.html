@@ -1,51 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/styles.css">
-	<title>Vinyl Player</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Vinyl Player</title>
 </head>
 <body>
-<div class="animation container">
-	<div class="animation_record record">
-		<div class="record-cover">
-			<img src="./img/vinyl5.jpg" alt="vinyl-record">
-		</div>
-	</div>
-	<div class="animation_tonearm tonearm">
-		<div class="tonearm_main">
-			<div class="tonearm_handler">
-				<!--прямоугольник похож на ручку-->
-			</div>
-			<div class="tonearm_holder">
-				<!--крепление, большое-->
-			</div>
-			<div class="tonearm_stylus-holder">
-				<!--крепление, маленькое-->
-			</div>
-		</div>
-		<div class="tonearm_secondary">
-			<div class="tonearm_holder">
-				<!--ручка-->
-			</div>
-			<div class="tonearm_stylus">
-				<div class="tonearm_needle-holder">
-					<!--изгиб-->
-				</div>
-				<div class="tonearm_needle">
-					<!--голка, черный блок-->
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="animation_btn" id="button-image">
-		<label for="button">
-			<input type="checkbox" name="button" id="button">
-		</label>
-		<div class="btn__triangle">
-		</div>
-	</div>
-</div>
+    <div class="container">
+        <input type="checkbox" name="button" id="button">   
+        <div id="button-image">
+           <img src="img/btn_off.png" alt="button-image" > 
+           <div class="triangle"></div>
+        </div>     
+    </div>
 </body>
 </html>
