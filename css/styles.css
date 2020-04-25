@@ -117,11 +117,12 @@ img {
     right: 84px;
     opacity: 0;
     z-index: 2;
+    cursor: pointer;
 }
 
-#button:checked + div .triangle,
-#button:checked + div .triangle::before,
-#button:checked + div .triangle::after {
+#button:checked + div.triangle,
+#button:checked + div.triangle::before,
+#button:checked + div.triangle::after {
     background-color: rgb(237, 111, 3);
 }
 
@@ -129,6 +130,26 @@ img {
     position: absolute;
     bottom: 50px;
     right: 50px;
+}
+
+#button-image label {
+    display: block;
+    border: solid 3px black;
+    padding: 3px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    background:
+        conic-gradient(#d8d8d8, #c3c3c3, #cccccc, #c6c6c6,
+            #d3d3d3, #d8d8d8, #d5d5d5, #d8d8d8,
+            #d3d3d3, #c5c5c5, #c0c0c0, #bfbfbf,
+            #d0d0d0, #d9d9d9, #d1d1d1, #c5c5c5,
+            #c8c8c8, #d8d8d8, #d5d5d5, #cdcdcd,
+            #c4c4c4, #d9d9d9, #cecece, #c5c5c5,
+            #c5c5c5, #cdcdcd, #d8d8d8, #d9d9d9,
+            #d8d8d8) content-box,
+        linear-gradient(#b3b0b0, #7e7a7a);
 }
 
 .triangle {
@@ -139,7 +160,7 @@ img {
     border-radius: 6px;
 
     top: 25px;
-    left: 30px;
+    left: 25px;
 }
 
 .triangle::before {
