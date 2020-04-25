@@ -43,6 +43,7 @@ img {
             rgb(42, 41, 40) 6px,
             rgb(43, 42, 42) 5px,
             rgb(42, 41, 40) 6px);
+    z-index: 2;
 }
 
 .record-cover {
@@ -78,34 +79,110 @@ img {
 
 /*----------------tonearm------------------*/
 
-.animation_tonearm {
+.animation_tonearm {}
+
+.tonearm_wrapper {
+    position: relative;
 }
 
-.tonearm {
-}
+
 
 .tonearm_main {
+    position: relative;
+    display: block;
+    width: 108px;
+    height: 420px;
+    top: 11px;
+    right: 102px;
+    transform: rotate(0deg);
+    transform-origin: center 90px;
+    z-index: 2;
+}
+
+.tonearm_stand {
+    position: absolute;
+    width: 155px;
+    height: 155px;
+    border-radius: 50%;
+     box-shadow: 0px 0px 0px 3px #8A8A8A, 0px 0px 3px 6px #000000, inset 0px 4px 4px #F2F2F2;
+    top: 28px;
+    right: 90px;
+    background: conic-gradient(#F1F1F1 0%, #BCBCBC 20%, #FFFFFF 30%, #B4B4B4 40%, #FFFFFF 50%, #D3D3D3 60%, #ABB0AF 70%, #F1F1F1 80%, #ABB0AF 91%, #F1F1F1 100%) 50% 50% / 100% 100% repeat;
+    z-index: 1;
+}
+
+.tonearm_stand::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 29.69%, rgba(255, 255, 255, 0) 97.4%);
 }
 
 .tonearm_handler {
+    position: absolute;
+    width: 54px;
+    height: 22px;
+    top: 0;
+    left: 27px;
+    background: linear-gradient(270deg, #A7A6A7 0%, #E3E3E2 25%, #F8F8F8 47.4%, #DBDBDA 68.23%, #807E80 100%);
+    box-shadow: -2px 0px 3px #000000;
+    z-index: 5;
 }
 
-.tonearm_holder {
+.tonearm_weight {
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    z-index: 5;
+    top: 50px;
+    left: 18px;
+    background: conic-gradient(#F1F1F1 0%, #BCBCBC 20%, #FFFFFF 30%, #B4B4B4 40%, #FFFFFF 50%, #D3D3D3 60%, #ABB0AF 70%, #F1F1F1 80%, #ABB0AF 91%, #F1F1F1 100%) 50% 50% / 100% 100% repeat;
+    box-shadow: -2px 0px 2px #000000;
 }
 
-.tonearm_stylus-holder {
+.tonearm_weight::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 29.69%, rgba(255, 255, 255, 0) 97.4%);
 }
 
-.tonearm_secondary {
+.tonearm_hand {
+    position: absolute;
+    width: 17px;
+    height: 290px;
+    top: 22px;
+    left: 46px;
+    background: linear-gradient(270deg, #A7A6A7 0%, #E3E3E2 46.87%, #A7A6A7 100%);
+    z-index: 4;
+    box-shadow: -2px -4px 2px #000000;
 }
 
-.tonearm_stylus {
+.tonearm_headshell_bend {
+    position: absolute;
+    width: 17px;
+    height: 27px;
+    bottom: 87px;
+    left: 41px;
+    background: linear-gradient(270deg, #A7A6A7 0%, #E3E3E2 46.87%, #A7A6A7 100%);
+    z-index: 3;
+    transform: matrix(0.89, 0.45, -0.45, 0.89, 0, 0);
+    box-shadow: -2px 0px 2px #000000;
 }
 
-.tonearm_needle-holder {
-}
-
-.tonearm_needle {
+.tonearm_headshell {
+    position: absolute;
+    width: 29px;
+    height: 85px;
+    bottom: 10px;
+    left: 8px;
+    background: linear-gradient(270deg, #000000 0%, #383838 17.19%, #383838 42.71%, #FFFFFF 46.87%, #383838 51.04%, #383838 83.33%, #000000 100%);
+    transform: matrix(0.87, 0.5, -0.49, 0.87, 0, 0);
+    z-index: 4;
+    box-shadow: -2px 2px 4px #000000;
 }
 
 /*---------------- end of tonearm------------------*/
@@ -187,6 +264,5 @@ img {
     top: -6px;
     border-radius: 6px;
 }
-
 
 
