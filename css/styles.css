@@ -123,6 +123,7 @@ img {
     top: 28px;
     right: 90px;
     background: conic-gradient(#F1F1F1 0%, #BCBCBC 20%, #FFFFFF 30%, #B4B4B4 40%, #FFFFFF 50%, #D3D3D3 60%, #ABB0AF 70%, #F1F1F1 80%, #ABB0AF 91%, #F1F1F1 100%) 50% 50% / 100% 100% repeat;
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 20%, #DBDBDB 50%);
     z-index: 1;
 }
 
@@ -154,6 +155,7 @@ img {
     top: 50px;
     left: 18px;
     background: conic-gradient(#F1F1F1 0%, #BCBCBC 20%, #FFFFFF 30%, #B4B4B4 40%, #FFFFFF 50%, #D3D3D3 60%, #ABB0AF 70%, #F1F1F1 80%, #ABB0AF 91%, #F1F1F1 100%) 50% 50% / 100% 100% repeat;
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 20%, #DBDBDB 50%);
     box-shadow: -2px 0px 2px #000000;
 }
 
@@ -226,7 +228,7 @@ img {
 
 #button-image label {
     display: block;
-    border: solid 3px black;
+    box-shadow: 0px 0px 0px 2px #8A8A8A, 0px 0px 3px 5px #000000, inset 0px 4px 7px #F2F2F2;
     padding: 3px;
     width: 60px;
     height: 60px;
@@ -242,6 +244,7 @@ img {
             #c5c5c5, #cdcdcd, #d8d8d8, #d9d9d9,
             #d8d8d8) content-box,
         linear-gradient(#b3b0b0, #7e7a7a);
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 20%, #DBDBDB 50%);
 }
 
 .triangle {
