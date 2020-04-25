@@ -33,6 +33,11 @@ img {
     padding: 10px;
 }
 
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
 .record {
     position: relative;
     width: 500px;
@@ -46,6 +51,13 @@ img {
     z-index: 2;
     animation-fill-mode: forwards;
     animation-play-state: paused;
+    animation: spin 5s linear 1s infinite;
+    animation-play-state: paused;
+}
+
+#button:checked~.record {
+    animation-delay: 1s;
+    animation-play-state: running;
 }
 
 .record-cover {
@@ -77,15 +89,6 @@ img {
     background: darkgrey;
     box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3),
                 inset -4px 3px 4px -1px rgb(255, 255, 255);
-}
-
-@keyframes spin {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(360deg);}
-}
-
-#button:checked~.record {
-    animation: spin 5s linear 1s infinite;
 }
 
 /*----------------tonearm------------------*/
