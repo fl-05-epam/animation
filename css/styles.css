@@ -73,7 +73,7 @@ img {
     border-radius: 50%;
     background: darkgrey;
     box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3),
-    inset -4px 3px 4px -1px rgb(255, 255, 255);
+                inset -4px 3px 4px -1px rgb(255, 255, 255);
 }
 
 /*----------------tonearm------------------*/
