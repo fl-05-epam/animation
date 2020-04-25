@@ -8,9 +8,15 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
-.container{
+img {
+    width: 100%;
+}
+
+.container {
+    position: relative;
     width: 675px;
     height: 540px;
     border-radius: 5px;
@@ -19,10 +25,92 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
 }
 
-#button{
+.animation {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.record {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(
+            rgb(0, 0, 0),
+            rgb(42, 41, 40) 6px,
+            rgb(43, 42, 42) 5px,
+            rgb(42, 41, 40) 6px);
+}
+
+.record-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.record-cover::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+    background: darkgrey;
+    box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3),
+                inset -4px 3px 4px -1px rgb(255, 255, 255);
+}
+
+/*----------------tonearm------------------*/
+
+.animation_tonearm {
+}
+
+.tonearm {
+}
+
+.tonearm_main {
+}
+
+.tonearm_handler {
+}
+
+.tonearm_holder {
+}
+
+.tonearm_stylus-holder {
+}
+
+.tonearm_secondary {
+}
+
+.tonearm_stylus {
+}
+
+.tonearm_needle-holder {
+}
+
+.tonearm_needle {
+}
+
+/*---------------- end of tonearm------------------*/
+
+#button {
     transform: scale(5);
     position: absolute;
     bottom: 86px;
@@ -31,35 +119,35 @@ body{
     z-index: 2;
 }
 
-#button:checked+div .triangle,
-#button:checked+div .triangle::before,
-#button:checked+div .triangle::after{
+#button:checked + div .triangle,
+#button:checked + div .triangle::before,
+#button:checked + div .triangle::after {
     background-color: rgb(237, 111, 3);
 }
 
-#button-image{
+#button-image {
     position: absolute;
     bottom: 50px;
     right: 50px;
 }
 
-.triangle{
+.triangle {
     position: absolute;
     width: 4px;
     height: 27px;
-    background-color:rgb(50, 50, 86);
+    background-color: rgb(50, 50, 86);
     border-radius: 6px;
 
     top: 25px;
     left: 30px;
 }
 
-.triangle::before{
-    content: '';
+.triangle::before {
+    content: "";
     position: absolute;
     width: 4px;
     height: 28px;
-    background-color:rgb(50, 50, 86);
+    background-color: rgb(50, 50, 86);
     transform: rotate(62deg);
     left: 11px;
     top: 6px;
@@ -67,8 +155,8 @@ body{
 
 }
 
-.triangle::after{
-    content: '';
+.triangle::after {
+    content: "";
     position: absolute;
     width: 4px;
     height: 28px;
