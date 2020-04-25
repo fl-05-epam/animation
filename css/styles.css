@@ -91,6 +91,7 @@ img {
     height: 30%;
     border-radius: 50%;
     overflow: hidden;
+    background-color: rgb(147, 165, 197);
     border: 10px solid rgb(0,0,0) ;
     box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3);
 }
