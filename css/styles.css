@@ -8,7 +8,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 img {
@@ -39,24 +38,43 @@ img {
     to {transform: rotate(360deg);}
 }
 
-.record {
+.record-wrap{
     position: relative;
     width: 500px;
     height: 500px;
     border-radius: 50%;
+    overflow: hidden;
+}
+
+.record,
+.record-shadows{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.record-shadows{
+    background: repeating-conic-gradient(
+            transparent 0,
+            rgba(255, 255, 255, 0.1),
+            transparent 15% 180deg);
+    z-index: 2;
+}
+
+.record {
     background: repeating-radial-gradient(
             rgb(0, 0, 0),
             rgb(42, 41, 40) 6px,
-            rgb(43, 42, 42) 5px,
-            rgb(42, 41, 40) 6px);
-    z-index: 2;
+            rgb(43, 42, 42) 5px);
     animation-fill-mode: forwards;
     animation-play-state: paused;
     animation: spin 5s linear 1s infinite;
     animation-play-state: paused;
+
 }
 
-#button:checked~.record {
+#button:checked ~ .record-wrap .record {
     animation-delay: 1s;
     animation-play-state: running;
 }
@@ -72,12 +90,12 @@ img {
     height: 30%;
     border-radius: 50%;
     overflow: hidden;
+    border: 10px solid rgb(0,0,0) ;
     box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .record-cover::after {
     content: "";
-    display: block;
     position: absolute;
     top: 0;
     right: 0;
@@ -88,8 +106,8 @@ img {
     height: 15%;
     border-radius: 50%;
     background: darkgrey;
-    box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3),
-                inset -4px 3px 4px -1px rgb(255, 255, 255);
+    box-shadow: -4px 4px 2px 0 rgba(0, 0, 0, 0.5),
+                inset -3px 2px 2px -2px rgb(255, 255, 255);
 }
 
 /*----------------tonearm------------------*/
