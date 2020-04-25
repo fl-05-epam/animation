@@ -25,6 +25,7 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 .animation {
@@ -119,10 +120,11 @@ img {
     width: 155px;
     height: 155px;
     border-radius: 50%;
-     box-shadow: 0px 0px 0px 3px #8A8A8A, 0px 0px 3px 6px #000000, inset 0px 4px 4px #F2F2F2;
+    box-shadow: 0px 0px 0px 3px #8A8A8A, 0px 0px 3px 6px #000000, inset 0px 4px 4px #F2F2F2;
     top: 28px;
     right: 90px;
     background: conic-gradient(#F1F1F1 0%, #BCBCBC 20%, #FFFFFF 30%, #B4B4B4 40%, #FFFFFF 50%, #D3D3D3 60%, #ABB0AF 70%, #F1F1F1 80%, #ABB0AF 91%, #F1F1F1 100%) 50% 50% / 100% 100% repeat;
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 20%, #DBDBDB 50%);
     z-index: 1;
 }
 
@@ -154,6 +156,7 @@ img {
     top: 50px;
     left: 18px;
     background: conic-gradient(#F1F1F1 0%, #BCBCBC 20%, #FFFFFF 30%, #B4B4B4 40%, #FFFFFF 50%, #D3D3D3 60%, #ABB0AF 70%, #F1F1F1 80%, #ABB0AF 91%, #F1F1F1 100%) 50% 50% / 100% 100% repeat;
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 20%, #DBDBDB 50%);
     box-shadow: -2px 0px 2px #000000;
 }
 
@@ -216,6 +219,7 @@ img {
 #button:checked + div .triangle::before,
 #button:checked + div .triangle::after {
     background-color: rgb(237, 111, 3);
+    box-shadow: 0px 0px 3px rgb(255, 133, 0);
 }
 
 #button-image {
@@ -226,7 +230,7 @@ img {
 
 #button-image label {
     display: block;
-    border: solid 3px black;
+    box-shadow: 0px 0px 0px 1px #8A8A8A, 0px 0px 3px 6px #000000, inset 0px 1px 4px #F2F2F2;
     padding: 3px;
     width: 60px;
     height: 60px;
@@ -242,6 +246,7 @@ img {
             #c5c5c5, #cdcdcd, #d8d8d8, #d9d9d9,
             #d8d8d8) content-box,
         linear-gradient(#b3b0b0, #7e7a7a);
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 20%, #DBDBDB 50%);
 }
 
 .triangle {
@@ -251,8 +256,9 @@ img {
     background-color: rgb(50, 50, 86);
     border-radius: 6px;
 
-    top: 23px;
-    left: 26px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10px, -50%);
 }
 
 .triangle::before {
