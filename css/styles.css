@@ -44,6 +44,8 @@ img {
             rgb(43, 42, 42) 5px,
             rgb(42, 41, 40) 6px);
     z-index: 2;
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
 }
 
 .record-cover {
@@ -77,15 +79,20 @@ img {
                 inset -4px 3px 4px -1px rgb(255, 255, 255);
 }
 
-/*----------------tonearm------------------*/
+@keyframes spin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
 
-.animation_tonearm {}
+#button:checked~.record {
+    animation: spin 5s linear 1s infinite;
+}
+
+/*----------------tonearm------------------*/
 
 .tonearm_wrapper {
     position: relative;
 }
-
-
 
 .tonearm_main {
     position: relative;
@@ -97,6 +104,11 @@ img {
     transform: rotate(0deg);
     transform-origin: center 90px;
     z-index: 2;
+    transition: transform 1s linear;
+}
+
+#button:checked~.tonearm .tonearm_main{
+    transform: rotate(20deg);
 }
 
 .tonearm_stand {
@@ -197,9 +209,9 @@ img {
     cursor: pointer;
 }
 
-#button:checked + div.triangle,
-#button:checked + div.triangle::before,
-#button:checked + div.triangle::after {
+#button:checked + div .triangle,
+#button:checked + div .triangle::before,
+#button:checked + div .triangle::after {
     background-color: rgb(237, 111, 3);
 }
 
@@ -236,8 +248,8 @@ img {
     background-color: rgb(50, 50, 86);
     border-radius: 6px;
 
-    top: 25px;
-    left: 25px;
+    top: 23px;
+    left: 26px;
 }
 
 .triangle::before {
