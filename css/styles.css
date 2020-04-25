@@ -8,7 +8,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 }
 
 img {
@@ -38,24 +37,43 @@ img {
     to {transform: rotate(360deg);}
 }
 
-.record {
+.record-wrap{
     position: relative;
     width: 500px;
     height: 500px;
     border-radius: 50%;
+    overflow: hidden;
+}
+
+.record,
+.record-shadows{
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+}
+
+.record-shadows{
+    background: repeating-conic-gradient(
+            transparent 0,
+            rgba(255, 255, 255, 0.1),
+            transparent 15% 180deg);
+    z-index: 2;
+}
+
+.record {
     background: repeating-radial-gradient(
             rgb(0, 0, 0),
             rgb(42, 41, 40) 6px,
-            rgb(43, 42, 42) 5px,
-            rgb(42, 41, 40) 6px);
-    z-index: 2;
+            rgb(43, 42, 42) 5px);
     animation-fill-mode: forwards;
     animation-play-state: paused;
     animation: spin 5s linear 1s infinite;
     animation-play-state: paused;
+
 }
 
-#button:checked~.record {
+#button:checked ~ .record-wrap .record {
     animation-delay: 1s;
     animation-play-state: running;
 }
