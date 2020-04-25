@@ -25,6 +25,7 @@ img {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 
 .animation {
@@ -43,11 +44,7 @@ img {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: repeating-radial-gradient(
-            rgb(0, 0, 0),
-            rgb(42, 41, 40) 6px,
-            rgb(43, 42, 42) 5px,
-            rgb(42, 41, 40) 6px);
+    background: repeating-radial-gradient(#000, #000 2px, #131313 6px);
     z-index: 2;
     animation-fill-mode: forwards;
     animation-play-state: paused;
