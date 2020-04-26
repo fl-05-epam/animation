@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -15,23 +16,21 @@ img {
 }
 
 .container {
-    position: relative;
-    width: 675px;
-    height: 540px;
-    border-radius: 5px;
-    box-shadow: -5px 7px 20px 4px rgba(0,0,0,0.62);
-    background-color: rgb(153,107,88);
-    background: url('../img/background.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 40px;
+  overflow: hidden;
 }
 
 .animation {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
+  width: 675px;
+  height: 540px;
+  border-radius: 5px;
+  box-shadow: -5px 7px 20px 4px rgba(0, 0, 0, 0.62);
+  background: url("../img/background.png") center no-repeat;
+  background-size: cover;
 }
 
 @keyframes spin {
@@ -45,8 +44,8 @@ img {
 
 .record-wrap {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 470px;
+  height: 470px;
   border-radius: 50%;
 }
 
@@ -85,19 +84,19 @@ img {
 }
 
 .record-cover {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    width: 30%;
-    height: 30%;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: rgb(147, 165, 197);
-    border: 10px solid rgb(0,0,0) ;
-    box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 35%;
+  height: 35%;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 10px solid rgb(0, 0, 0);
+  background-color: rgb(147, 165, 197);
+  box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
 .record-cover::after {
@@ -108,46 +107,27 @@ img {
   bottom: 0;
   left: 0;
   margin: auto;
-  width: 15%;
-  height: 15%;
+  width: 12%;
+  height: 12%;
   border-radius: 50%;
   background: rgb(169, 169, 169);
   box-shadow: -4px 4px 2px 0 rgba(0, 0, 0, 0.5),
-    inset -3px 2px 2px -2px rgb(255, 255, 255);
+  inset -3px 2px 2px -2px rgb(255, 255, 255);
 }
 
-/*----------------tonearm------------------*/
-
-.tonearm_wrapper {
-  position: relative;
-}
-
-.tonearm_main {
-  position: relative;
-  display: block;
-  width: 108px;
-  height: 420px;
-  top: 11px;
-  right: 102px;
-  transform: rotate(0deg);
-  transform-origin: center 90px;
-  z-index: 2;
-  transition: transform 1s linear;
-}
-
-#button:checked ~ .tonearm .tonearm_main {
-  transform: rotate(20deg);
+.tonearm {
+  position: absolute;
+  top: 30px;
+  right: 75px;
 }
 
 .tonearm_stand {
-  position: absolute;
   width: 155px;
   height: 155px;
   border-radius: 50%;
-  box-shadow: 0px 0px 0px 3px rgb(138, 138, 138), 0px 0px 3px 6px rgb(0, 0, 0),
-    inset 0px 4px 4px rgb(242, 242, 242);
-  top: 28px;
-  right: 90px;
+  box-shadow: 0 0 0 3px rgb(138, 138, 138),
+  0 0 3px 6px rgb(0, 0, 0),
+  inset 0 4px 4px rgb(242, 242, 242);
   background: conic-gradient(
       rgb(241, 241, 241) 0%,
       rgb(188, 188, 188) 20%,
@@ -168,7 +148,6 @@ img {
     rgb(255, 255, 255) 20%,
     rgb(219, 219, 219) 50%
   );
-  z-index: 1;
 }
 
 .tonearm_stand::after {
@@ -183,11 +162,27 @@ img {
   );
 }
 
+.tonearm_main {
+  position: absolute;
+  top: -10px;
+  right: 25px;
+  width: 108px;
+  height: 420px;
+  transform: rotate(0);
+  transform-origin: center 90px;
+  z-index: 2;
+  transition: transform 1s linear;
+}
+
+#button:checked ~ .tonearm .tonearm_main {
+  transform: rotate(20deg);
+}
+
 .tonearm_handler {
   position: absolute;
-  width: 54px;
-  height: 22px;
-  top: 0;
+  width: 55px;
+  height: 20px;
+  top: 8px;
   left: 27px;
   background: linear-gradient(
     270deg,
@@ -197,7 +192,7 @@ img {
     rgb(219, 219, 218) 68.23%,
     rgb(128, 126, 128) 100%
   );
-  box-shadow: -2px 0px 3px rgb(0, 0, 0);
+  box-shadow: -2px 0 3px rgb(0, 0, 0);
   z-index: 5;
 }
 
@@ -208,7 +203,7 @@ img {
   border-radius: 50%;
   z-index: 5;
   top: 50px;
-  left: 18px;
+  left: 20px;
   background: conic-gradient(
       rgb(241, 241, 241) 0%,
       rgb(188, 188, 188) 20%,
@@ -229,7 +224,7 @@ img {
     rgb(255, 255, 255) 20%,
     rgb(219, 219, 219) 50%
   );
-  box-shadow: -2px 0px 2px rgb(0, 0, 0);
+  box-shadow: -2px 0 2px rgb(0, 0, 0);
 }
 
 .tonearm_weight::after {
@@ -246,8 +241,8 @@ img {
 
 .tonearm_hand {
   position: absolute;
-  width: 17px;
-  height: 290px;
+  width: 18px;
+  height: 300px;
   top: 22px;
   left: 46px;
   background: linear-gradient(
@@ -262,27 +257,26 @@ img {
 
 .tonearm_headshell_bend {
   position: absolute;
-  width: 17px;
-  height: 27px;
-  bottom: 87px;
-  left: 41px;
+  width: 15px;
+  height: 30px;
+  bottom: 75px;
+  left: 44px;
   background: linear-gradient(
     270deg,
     rgb(167, 166, 167) 0%,
     rgb(227, 227, 226) 46.87%,
     rgb(167, 166, 167) 100%
   );
-  z-index: 3;
-  transform: matrix(0.89, 0.45, -0.45, 0.89, 0, 0);
-  box-shadow: -2px 0px 2px rgb(0, 0, 0);
+  transform: matrix(1, 0.65, -0.35, 1, 0, 0);
+  box-shadow: -2px 0 2px rgb(0, 0, 0)
 }
 
 .tonearm_headshell {
   position: absolute;
-  width: 29px;
-  height: 85px;
-  bottom: 10px;
-  left: 8px;
+  width: 25px;
+  height: 75px;
+  bottom: 0;
+  left: 15px;
   background: linear-gradient(
     270deg,
     rgb(0, 0, 0) 0%,
@@ -293,12 +287,10 @@ img {
     rgb(56, 56, 56) 83.33%,
     rgb(0, 0, 0) 100%
   );
-  transform: matrix(0.87, 0.5, -0.49, 0.87, 0, 0);
-  z-index: 4;
+  transform: matrix(1, .5, -.5, 1, 0, 0);
   box-shadow: -2px 2px 4px rgb(0, 0, 0);
 }
 
-/*---------------- end of tonearm------------------*/
 
 #button {
   transform: scale(5);
@@ -314,19 +306,20 @@ img {
 #button:checked + div .triangle::before,
 #button:checked + div .triangle::after {
   background-color: rgb(237, 111, 3);
-  box-shadow: 0px 0px 3px rgb(255, 133, 0);
+  box-shadow: 0 0 3px rgb(255, 133, 0);
 }
 
 #button-image {
   position: absolute;
-  bottom: 50px;
-  right: 50px;
+  bottom: 40px;
+  right: 40px;
 }
 
 #button-image label {
   display: block;
-  box-shadow: 0px 0px 0px 1px rgb(138, 138, 138), 0px 0px 3px 6px rgb(0, 0, 0),
-    inset 0px 1px 4px rgb(242, 242, 242);
+  box-shadow: 0 0 0 1px rgb(138, 138, 138),
+  0 0 3px 6px rgb(0, 0, 0),
+  inset 0 1px 4px rgb(242, 242, 242);
   padding: 3px;
   width: 60px;
   height: 60px;
