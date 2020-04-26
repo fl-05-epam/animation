@@ -44,10 +44,12 @@ img {
 
 .record-wrap {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 480px;
+  height: 480px;
   border-radius: 50%;
   overflow: hidden;
+  padding-top: 20px;
+  padding-left: 20px;
 }
 
 .record,
@@ -98,16 +100,14 @@ img {
   box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
-.record-cover::after {
+.container::after {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  width: 15%;
-  height: 15%;
+  top: 47%;
+  left: 37.5%;
+  z-index: 4;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: rgb(169, 169, 169);
   box-shadow: -4px 4px 2px 0 rgba(0, 0, 0, 0.5),
