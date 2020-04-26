@@ -68,12 +68,8 @@ img {
 }
 
 .record {
-    background: repeating-radial-gradient(
-            rgb(0, 0, 0),
-            rgb(42, 41, 40) 6px,
-            rgb(43, 42, 42) 5px);
+    background: repeating-radial-gradient(rgb(0,0,0), rgb(0,0,0) 3px, rgb(13,13,13) 6px);
     animation-fill-mode: forwards;
-    animation-play-state: paused;
     animation: spin 5s linear 1s infinite;
     animation-play-state: paused;
     z-index: 2;
