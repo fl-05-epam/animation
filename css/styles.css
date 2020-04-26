@@ -71,10 +71,7 @@ img {
             rgb(0, 0, 0),
             rgb(42, 41, 40) 6px,
             rgb(43, 42, 42) 5px);
-    animation-fill-mode: forwards;
-    animation-play-state: paused;
-    animation: spin 5s linear 1s infinite;
-    animation-play-state: paused;
+    animation: spin 5s linear 1s infinite forwards paused;
     z-index: 2;
 }
 
