@@ -58,25 +58,24 @@ img {
   border-radius: inherit;
 }
 
-.record-shadows {
-  background: repeating-conic-gradient(
-    transparent 0,
-    rgba(255, 255, 255, 0.1),
-    transparent 15% 180deg
-  );
-  z-index: 2;
+.record-shadows{
+    background: repeating-conic-gradient(
+            transparent 0,
+            rgba(255, 255, 255, 0.1),
+            transparent 15% 180deg);
+    z-index: 3;
 }
 
 .record {
-  background: repeating-radial-gradient(
-    rgb(0, 0, 0),
-    rgb(42, 41, 40) 6px,
-    rgb(43, 42, 42) 5px
-  );
-  animation-fill-mode: forwards;
-  animation-play-state: paused;
-  animation: spin 5s linear 1s infinite;
-  animation-play-state: paused;
+    background: repeating-radial-gradient(
+            rgb(0, 0, 0),
+            rgb(42, 41, 40) 6px,
+            rgb(43, 42, 42) 5px);
+    animation-fill-mode: forwards;
+    animation-play-state: paused;
+    animation: spin 5s linear 1s infinite;
+    animation-play-state: paused;
+    z-index: 2;
 }
 
 #button:checked ~ .record-wrap .record {
