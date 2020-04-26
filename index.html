@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/styles.css">
-	<title>Vinyl Player</title>
-</head>
-<body>
-<div class="animation container">
-	<div class="animation_record record">
-		<div class="record-cover">
-			<img src="./img/vinyl5.jpg" alt="vinyl-record">
-		</div>
-	</div>
-	<div class="animation_tonearm tonearm">
-		<div class="tonearm_stand">
-			<!--крепление, большое-->
-		</div>
-		<div class="tonearm_main">
-			<div class="tonearm_handler">
-				<!--прямоугольник похож на ручку-->
-			</div>
-			<div class="tonearm_weight">
-				<!--крепление, маленькое-->
-			</div>
-			<div class="tonearm_hand">
-				<!--ручка-->
-			</div>
-			<div class="tonearm_headshell_bend">
-				<!--изгиб-->
-			</div>
-			<div class="tonearm_headshell">
-				<!--голка, черный блок-->
-			</div>
-		</div>
-	</div>
-	<div class="animation_btn" id="button-image">
-		<label for="button"></label>
-		<input type="checkbox" name="button" id="button">
-		<div class="triangle">
-		</div>
-	</div>
-</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Vinyl Player</title>
+  </head>
+  <body>
+    <div class="animation container">
+      <input type="checkbox" name="button" id="button" />
+      <div class="animation_btn" id="button-image">
+        <div class="triangle"></div>
+        <label for="button"></label>
+      </div>
+      <div class="record-wrap">
+        <div class="record-shadows"></div>
+        <div class="animation_record record">
+          <div class="record-cover">
+            <img src="./img/vinyl5.jpg" alt="vinyl-record" />
+          </div>
+        </div>
+      </div>
+      <div class="animation_tonearm tonearm">
+        <div class="tonearm_stand"></div>
+        <div class="tonearm_main">
+          <div class="tonearm_handler"></div>
+          <div class="tonearm_weight"></div>
+          <div class="tonearm_hand"></div>
+          <div class="tonearm_headshell_bend"></div>
+          <div class="tonearm_headshell"></div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
