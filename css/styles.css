@@ -63,14 +63,6 @@ img {
             rgba(255, 255, 255, 0.1),
             transparent 15% 180deg);
     z-index: 3;
-}
-
-.record-around-shadow {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    border-radius: inherit;
-    z-index: 3;
     box-shadow: -5px 4px 10px rgb(0,0,0);
 }
 
