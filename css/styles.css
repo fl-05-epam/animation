@@ -15,39 +15,23 @@ img {
 }
 
 .container {
-  position: relative;
-  width: 675px;
-  height: 540px;
-  border-radius: 5px;
-  box-shadow: -5px 7px 20px 4px rgba(0, 0, 0, 0.62);
-  background: url("../img/background.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
+    position: relative;
+    width: 675px;
+    height: 540px;
+    border-radius: 5px;
+    box-shadow: -5px 7px 20px 4px rgba(0,0,0,0.62);
+    background-color: rgb(153,107,88);
+    background: url('../img/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .animation {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-}
-
-.animation::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: -40px;
-  right: 170px;
-  bottom: 0;
-  left: 0;
-  z-index: 999;
-  margin: auto;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: darkgrey;
-  box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3), inset -4px 3px 4px -1px rgb(255, 255, 255);
 }
 
 @keyframes spin {
@@ -64,7 +48,6 @@ img {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  overflow: hidden;
 }
 
 .record,
@@ -81,15 +64,16 @@ img {
             rgba(255, 255, 255, 0.1),
             transparent 15% 180deg);
     z-index: 3;
+    box-shadow: -5px 4px 10px rgb(0,0,0);
 }
 
 .record {
-  background: repeating-radial-gradient(
-    rgb(0, 0, 0),
-    rgb(42, 41, 40) 6px,
-    rgb(43, 42, 42) 5px);
-  animation: spin 5s linear 1s infinite forwards paused;
-  z-index: 2;
+    background: repeating-radial-gradient(
+            rgb(0, 0, 0),
+            rgb(42, 41, 40) 6px,
+            rgb(43, 42, 42) 5px);
+    animation: spin 5s linear 1s infinite forwards paused;
+    z-index: 2;
 }
 
 #button:checked ~ .record-wrap .record {
@@ -98,18 +82,35 @@ img {
 }
 
 .record-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 30%;
+    height: 30%;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgb(147, 165, 197);
+    border: 10px solid rgb(0,0,0) ;
+    box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3);
+}
+
+.record-cover::after {
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   margin: auto;
-  width: 30%;
-  height: 30%;
+  width: 15%;
+  height: 15%;
   border-radius: 50%;
-  overflow: hidden;
-  border: 10px solid rgb(0, 0, 0);
-  box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3);
+  background: rgb(169, 169, 169);
+  box-shadow: -4px 4px 2px 0 rgba(0, 0, 0, 0.5),
+    inset -3px 2px 2px -2px rgb(255, 255, 255);
 }
 
 /*----------------tonearm------------------*/
