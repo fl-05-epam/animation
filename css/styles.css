@@ -21,7 +21,7 @@ img {
     border-radius: 5px;
     box-shadow: -5px 7px 20px 4px rgba(0,0,0,0.62);
     background-color: rgb(153,107,88);
-    background: url('../img/background.jpg');
+    background: url("../img/background.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -140,14 +140,32 @@ img {
 }
 
 .tonearm_stand {
-  position: absolute;
   width: 155px;
   height: 155px;
-  border-radius: 50%;
-  box-shadow: 0px 0px 0px 3px rgb(138, 138, 138), 0px 0px 3px 6px rgb(0, 0, 0),
-    inset 0px 4px 4px rgb(242, 242, 242);
+  box-shadow: 0px 0px 0px 3px rgb(138, 138, 138),
+              0px 0px 3px 6px rgb(0, 0, 0),
+              inset 0px 4px 4px rgb(242, 242, 242);
   top: 28px;
   right: 90px;
+  z-index: 1;
+}
+
+.tonearm_stand::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgb(255, 255, 255) 29.69%,
+          rgba(255, 255, 255, 0) 97.4%
+  );
+}
+
+  .tonearm_stand,
+  .tonearm_weight{
+    position: absolute;
+    border-radius: 50%;
   /*for mozilla + ie*/
   background: radial-gradient(
           rgb(255, 255, 255) 0%,
@@ -168,18 +186,25 @@ img {
       rgb(241, 241, 241) 100%
     )
     50% 50% / 100% 100% repeat;
-  z-index: 1;
+}
+.tonearm_weight {
+  width: 72px;
+  height: 72px;
+  z-index: 5;
+  top: 50px;
+  left: 18px;
+  box-shadow: -2px 0px 2px rgb(0, 0, 0);
 }
 
-.tonearm_stand::after {
+.tonearm_weight::after {
   content: "";
   display: block;
   width: 100%;
   height: 100%;
   background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgb(255, 255, 255) 29.69%,
-    rgba(255, 255, 255, 0) 97.4%
+          50% 50% at 50% 50%,
+          rgb(255, 255, 255) 29.69%,
+          rgba(255, 255, 255, 0) 97.4%
   );
 }
 
@@ -201,77 +226,31 @@ img {
   z-index: 5;
 }
 
-.tonearm_weight {
-  position: absolute;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  z-index: 5;
-  top: 50px;
-  left: 18px;
-  /*for mozilla + ie*/
-  background: radial-gradient(
-          rgb(255, 255, 255) 0%,
-          rgb(255, 255, 255) 20%,
-          rgb(219, 219, 219) 50%
-  );
-  /* for other browsers*/
-  background: conic-gradient(
-      rgb(241, 241, 241) 0%,
-      rgb(188, 188, 188) 20%,
-      rgb(255, 255, 255) 30%,
-      rgb(180, 180, 180) 40%,
-      rgb(255, 255, 255) 50%,
-      rgb(211, 211, 211) 60%,
-      rgb(171, 176, 175) 70%,
-      rgb(241, 241, 241) 80%,
-      rgb(171, 176, 175) 91%,
-      rgb(241, 241, 241) 100%
-    )
-    50% 50% / 100% 100% repeat;
-  box-shadow: -2px 0px 2px rgb(0, 0, 0);
-}
-
-.tonearm_weight::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgb(255, 255, 255) 29.69%,
-    rgba(255, 255, 255, 0) 97.4%
-  );
-}
-
 .tonearm_hand {
-  position: absolute;
   width: 17px;
   height: 290px;
   top: 22px;
   left: 46px;
-  background: linear-gradient(
-    270deg,
-    rgb(167, 166, 167) 0%,
-    rgb(227, 227, 226) 46.87%,
-    rgb(167, 166, 167) 100%
-  );
   z-index: 4;
   box-shadow: -2px -4px 2px rgb(0, 0, 0);
 }
 
-.tonearm_headshell_bend {
+.tonearm_hand,
+.tonearm_headshell_bend{
   position: absolute;
+  background: linear-gradient(
+          270deg,
+          rgb(167, 166, 167) 0%,
+          rgb(227, 227, 226) 46.87%,
+          rgb(167, 166, 167) 100%
+  );
+}
+
+.tonearm_headshell_bend {
   width: 17px;
   height: 27px;
   bottom: 87px;
   left: 41px;
-  background: linear-gradient(
-    270deg,
-    rgb(167, 166, 167) 0%,
-    rgb(227, 227, 226) 46.87%,
-    rgb(167, 166, 167) 100%
-  );
   z-index: 3;
   transform: matrix(0.89, 0.45, -0.45, 0.89, 0, 0);
   box-shadow: -2px 0px 2px rgb(0, 0, 0);
