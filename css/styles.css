@@ -29,7 +29,8 @@ img {
   height: 540px;
   border-radius: 5px;
   box-shadow: -5px 7px 20px 4px rgba(0, 0, 0, 0.62);
-  background: url("../img/background.png") center no-repeat;
+  background-color: rgb(153,107,88);
+  background: url("../img/background.jpg") center no-repeat;
   background-size: cover;
 }
 
@@ -71,10 +72,7 @@ img {
             rgb(0, 0, 0),
             rgb(42, 41, 40) 6px,
             rgb(43, 42, 42) 5px);
-    animation-fill-mode: forwards;
-    animation-play-state: paused;
-    animation: spin 5s linear 1s infinite;
-    animation-play-state: paused;
+    animation: spin 5s linear 1s infinite forwards paused;
     z-index: 2;
 }
 
@@ -112,11 +110,20 @@ img {
   border-radius: 50%;
   background: rgb(169, 169, 169);
   box-shadow: -4px 4px 2px 0 rgba(0, 0, 0, 0.5),
-  inset -3px 2px 2px -2px rgb(255, 255, 255);
+              inset -3px 2px 2px -2px rgb(255, 255, 255);
+}
+
+.tonearm,
+.tonearm_weight,
+.tonearm_main,
+.tonearm_handler,
+.tonearm_hand,
+.tonearm_headshell,
+.tonearm_headshell_bend {
+  position: absolute;
 }
 
 .tonearm {
-  position: absolute;
   top: 30px;
   right: 75px;
 }
@@ -124,33 +131,37 @@ img {
 .tonearm_stand {
   width: 155px;
   height: 155px;
-  border-radius: 50%;
   box-shadow: 0 0 0 3px rgb(138, 138, 138),
-  0 0 3px 6px rgb(0, 0, 0),
-  inset 0 4px 4px rgb(242, 242, 242);
-  background: conic-gradient(
-      rgb(241, 241, 241) 0%,
-      rgb(188, 188, 188) 20%,
-      rgb(255, 255, 255) 30%,
-      rgb(180, 180, 180) 40%,
-      rgb(255, 255, 255) 50%,
-      rgb(211, 211, 211) 60%,
-      rgb(171, 176, 175) 70%,
-      rgb(241, 241, 241) 80%,
-      rgb(171, 176, 175) 91%,
-      rgb(241, 241, 241) 100%
-    )
-    50% 50% / 100% 100% repeat;
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    rgb(255, 255, 255) 0%,
-    rgb(255, 255, 255) 20%,
-    rgb(219, 219, 219) 50%
-  );
+              0 0 3px 6px rgb(0, 0, 0),
+              inset 0 4px 4px rgb(242, 242, 242);
 }
 
-.tonearm_stand::after {
+.tonearm_stand,
+.tonearm_weight{
+  border-radius: 50%;
+  /*for mozilla + ie*/
+  background: radial-gradient(
+          rgb(255, 255, 255) 0%,
+          rgb(255, 255, 255) 20%,
+          rgb(219, 219, 219) 50%
+  );
+  /* for other browsers*/
+  background: conic-gradient(
+          rgb(241, 241, 241) 0%,
+          rgb(188, 188, 188) 20%,
+          rgb(255, 255, 255) 30%,
+          rgb(180, 180, 180) 40%,
+          rgb(255, 255, 255) 50%,
+          rgb(211, 211, 211) 60%,
+          rgb(171, 176, 175) 70%,
+          rgb(241, 241, 241) 80%,
+          rgb(171, 176, 175) 91%,
+          rgb(241, 241, 241) 100%
+  ) 50% 50% / 100% 100% repeat;
+}
+
+.tonearm_stand::after,
+.tonearm_wight::after {
   content: "";
   display: block;
   width: 100%;
@@ -161,9 +172,17 @@ img {
     rgba(255, 255, 255, 0) 97.4%
   );
 }
+.tonearm_weight {
+  top: 50px;
+  left: 20px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  z-index: 5;
+  box-shadow: -2px 0 2px rgb(0, 0, 0);
+}
 
 .tonearm_main {
-  position: absolute;
   top: -10px;
   right: 25px;
   width: 108px;
@@ -179,7 +198,6 @@ img {
 }
 
 .tonearm_handler {
-  position: absolute;
   width: 55px;
   height: 20px;
   top: 8px;
@@ -196,83 +214,35 @@ img {
   z-index: 5;
 }
 
-.tonearm_weight {
-  position: absolute;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  z-index: 5;
-  top: 50px;
-  left: 20px;
-  background: conic-gradient(
-      rgb(241, 241, 241) 0%,
-      rgb(188, 188, 188) 20%,
-      rgb(255, 255, 255) 30%,
-      rgb(180, 180, 180) 40%,
-      rgb(255, 255, 255) 50%,
-      rgb(211, 211, 211) 60%,
-      rgb(171, 176, 175) 70%,
-      rgb(241, 241, 241) 80%,
-      rgb(171, 176, 175) 91%,
-      rgb(241, 241, 241) 100%
-    )
-    50% 50% / 100% 100% repeat;
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    rgb(255, 255, 255) 0%,
-    rgb(255, 255, 255) 20%,
-    rgb(219, 219, 219) 50%
-  );
-  box-shadow: -2px 0 2px rgb(0, 0, 0);
-}
-
-.tonearm_weight::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgb(255, 255, 255) 29.69%,
-    rgba(255, 255, 255, 0) 97.4%
-  );
-}
-
 .tonearm_hand {
-  position: absolute;
   width: 18px;
   height: 300px;
   top: 22px;
   left: 46px;
-  background: linear-gradient(
-    270deg,
-    rgb(167, 166, 167) 0%,
-    rgb(227, 227, 226) 46.87%,
-    rgb(167, 166, 167) 100%
-  );
   z-index: 4;
   box-shadow: -2px -4px 2px rgb(0, 0, 0);
 }
 
-.tonearm_headshell_bend {
-  position: absolute;
-  width: 15px;
-  height: 30px;
-  bottom: 75px;
-  left: 44px;
+.tonearm_hand,
+.tonearm_headshell_bend{
   background: linear-gradient(
     270deg,
     rgb(167, 166, 167) 0%,
     rgb(227, 227, 226) 46.87%,
     rgb(167, 166, 167) 100%
   );
+}
+
+.tonearm_headshell_bend {
+  width: 15px;
+  height: 30px;
+  bottom: 75px;
+  left: 44px;
   transform: matrix(1, 0.65, -0.35, 1, 0, 0);
   box-shadow: -2px 0 2px rgb(0, 0, 0)
 }
 
 .tonearm_headshell {
-  position: absolute;
   width: 25px;
   height: 75px;
   bottom: 0;
@@ -318,52 +288,31 @@ img {
 #button-image label {
   display: block;
   box-shadow: 0 0 0 1px rgb(138, 138, 138),
-  0 0 3px 6px rgb(0, 0, 0),
-  inset 0 1px 4px rgb(242, 242, 242);
+              0 0 3px 6px rgb(0, 0, 0),
+              inset 0 1px 4px rgb(242, 242, 242);
   padding: 3px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
-  background: conic-gradient(
-        rgb(216, 216, 216),
-        rgb(195, 195, 195),
-        rgb(204, 204, 204),
-        rgb(198, 198, 198),
-        rgb(211, 211, 211),
-        rgb(216, 216, 216),
-        rgb(213, 213, 213),
-        rgb(216, 216, 216),
-        rgb(211, 211, 211),
-        rgb(197, 197, 197),
-        rgb(192, 192, 192),
-        rgb(191, 191, 191),
-        rgb(208, 208, 208),
-        rgb(217, 217, 217),
-        rgb(209, 209, 209),
-        rgb(197, 197, 197),
-        rgb(200, 200, 200),
-        rgb(216, 216, 216),
-        rgb(213, 213, 213),
-        rgb(205, 205, 205),
-        rgb(196, 196, 196),
-        rgb(217, 217, 217),
-        rgb(206, 206, 206),
-        rgb(197, 197, 197),
-        rgb(197, 197, 197),
-        rgb(205, 205, 205),
-        rgb(216, 216, 216),
-        rgb(217, 217, 217),
-        rgb(216, 216, 216)
-      )
-      content-box,
-    linear-gradient(rgb(179, 176, 176), rgb(126, 122, 122));
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
+  /*for mozilla + ie*/
+  background: radial-gradient(
     rgb(255, 255, 255) 0%,
     rgb(255, 255, 255) 20%,
     rgb(219, 219, 219) 50%
+  );
+  /* for other browsers*/
+  background: conic-gradient(
+          rgb(241, 241, 241) 0%,
+          rgb(188, 188, 188) 20%,
+          rgb(255, 255, 255) 30%,
+          rgb(180, 180, 180) 40%,
+          rgb(255, 255, 255) 50%,
+          rgb(211, 211, 211) 60%,
+          rgb(171, 176, 175) 70%,
+          rgb(241, 241, 241) 80%,
+          rgb(171, 176, 175) 91%,
+          rgb(241, 241, 241) 100%
   );
 }
 
