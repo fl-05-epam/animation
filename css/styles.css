@@ -148,6 +148,13 @@ img {
     inset 0px 4px 4px rgb(242, 242, 242);
   top: 28px;
   right: 90px;
+  /*for mozilla + ie*/
+  background: radial-gradient(
+          rgb(255, 255, 255) 0%,
+          rgb(255, 255, 255) 20%,
+          rgb(219, 219, 219) 50%
+  );
+  /* for other browsers*/
   background: conic-gradient(
       rgb(241, 241, 241) 0%,
       rgb(188, 188, 188) 20%,
@@ -161,13 +168,6 @@ img {
       rgb(241, 241, 241) 100%
     )
     50% 50% / 100% 100% repeat;
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    rgb(255, 255, 255) 0%,
-    rgb(255, 255, 255) 20%,
-    rgb(219, 219, 219) 50%
-  );
   z-index: 1;
 }
 
@@ -209,6 +209,13 @@ img {
   z-index: 5;
   top: 50px;
   left: 18px;
+  /*for mozilla + ie*/
+  background: radial-gradient(
+          rgb(255, 255, 255) 0%,
+          rgb(255, 255, 255) 20%,
+          rgb(219, 219, 219) 50%
+  );
+  /* for other browsers*/
   background: conic-gradient(
       rgb(241, 241, 241) 0%,
       rgb(188, 188, 188) 20%,
@@ -222,13 +229,6 @@ img {
       rgb(241, 241, 241) 100%
     )
     50% 50% / 100% 100% repeat;
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    rgb(255, 255, 255) 0%,
-    rgb(255, 255, 255) 20%,
-    rgb(219, 219, 219) 50%
-  );
   box-shadow: -2px 0px 2px rgb(0, 0, 0);
 }
 
@@ -332,45 +332,21 @@ img {
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
+  /*for mozilla + ie*/
+  background: radial-gradient(rgb(255, 255, 255) 0%, rgb(255, 255, 255) 20%, rgb(219, 219, 219) 50%
+  );
+  /* for other browsers*/
   background: conic-gradient(
-        rgb(216, 216, 216),
-        rgb(195, 195, 195),
-        rgb(204, 204, 204),
-        rgb(198, 198, 198),
-        rgb(211, 211, 211),
-        rgb(216, 216, 216),
-        rgb(213, 213, 213),
-        rgb(216, 216, 216),
-        rgb(211, 211, 211),
-        rgb(197, 197, 197),
-        rgb(192, 192, 192),
-        rgb(191, 191, 191),
-        rgb(208, 208, 208),
-        rgb(217, 217, 217),
-        rgb(209, 209, 209),
-        rgb(197, 197, 197),
-        rgb(200, 200, 200),
-        rgb(216, 216, 216),
-        rgb(213, 213, 213),
-        rgb(205, 205, 205),
-        rgb(196, 196, 196),
-        rgb(217, 217, 217),
-        rgb(206, 206, 206),
-        rgb(197, 197, 197),
-        rgb(197, 197, 197),
-        rgb(205, 205, 205),
-        rgb(216, 216, 216),
-        rgb(217, 217, 217),
-        rgb(216, 216, 216)
-      )
-      content-box,
-    linear-gradient(rgb(179, 176, 176), rgb(126, 122, 122));
-  background: -moz-radial-gradient(
-    center,
-    ellipse cover,
-    rgb(255, 255, 255) 0%,
-    rgb(255, 255, 255) 20%,
-    rgb(219, 219, 219) 50%
+          rgb(241, 241, 241) 0%,
+          rgb(188, 188, 188) 20%,
+          rgb(255, 255, 255) 30%,
+          rgb(180, 180, 180) 40%,
+          rgb(255, 255, 255) 50%,
+          rgb(211, 211, 211) 60%,
+          rgb(171, 176, 175) 70%,
+          rgb(241, 241, 241) 80%,
+          rgb(171, 176, 175) 91%,
+          rgb(241, 241, 241) 100%
   );
 }
 
