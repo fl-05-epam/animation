@@ -113,11 +113,20 @@ img {
   border-radius: 50%;
   background: rgb(169, 169, 169);
   box-shadow: -4px 4px 2px 0 rgba(0, 0, 0, 0.5),
-  inset -3px 2px 2px -2px rgb(255, 255, 255);
+              inset -3px 2px 2px -2px rgb(255, 255, 255);
+}
+
+.tonearm,
+.tonearm_weight,
+.tonearm_main,
+.tonearm_handler,
+.tonearm_hand,
+.tonearm_headshell,
+.tonearm_headshell_bend {
+  position: absolute;
 }
 
 .tonearm {
-  position: absolute;
   top: 30px;
   right: 75px;
 }
@@ -128,27 +137,11 @@ img {
   box-shadow: 0 0 0 3px rgb(138, 138, 138),
               0 0 3px 6px rgb(0, 0, 0),
               inset 0 4px 4px rgb(242, 242, 242);
-  top: 28px;
-  right: 90px;
-  z-index: 1;
 }
 
-.tonearm_stand::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-          50% 50% at 50% 50%,
-          rgb(255, 255, 255) 29.69%,
-          rgba(255, 255, 255, 0) 97.4%
-  );
-}
-
-  .tonearm_stand,
-  .tonearm_weight{
-    position: absolute;
-    border-radius: 50%;
+.tonearm_stand,
+.tonearm_weight{
+  border-radius: 50%;
   /*for mozilla + ie*/
   background: radial-gradient(
           rgb(255, 255, 255) 0%,
@@ -157,42 +150,42 @@ img {
   );
   /* for other browsers*/
   background: conic-gradient(
-      rgb(241, 241, 241) 0%,
-      rgb(188, 188, 188) 20%,
-      rgb(255, 255, 255) 30%,
-      rgb(180, 180, 180) 40%,
-      rgb(255, 255, 255) 50%,
-      rgb(211, 211, 211) 60%,
-      rgb(171, 176, 175) 70%,
-      rgb(241, 241, 241) 80%,
-      rgb(171, 176, 175) 91%,
-      rgb(241, 241, 241) 100%
-    )
-    50% 50% / 100% 100% repeat;
-}
-.tonearm_weight {
-  width: 72px;
-  height: 72px;
-  z-index: 5;
-  top: 50px;
-  left: 18px;
-  box-shadow: -2px 0 2px rgb(0, 0, 0);
+          rgb(241, 241, 241) 0%,
+          rgb(188, 188, 188) 20%,
+          rgb(255, 255, 255) 30%,
+          rgb(180, 180, 180) 40%,
+          rgb(255, 255, 255) 50%,
+          rgb(211, 211, 211) 60%,
+          rgb(171, 176, 175) 70%,
+          rgb(241, 241, 241) 80%,
+          rgb(171, 176, 175) 91%,
+          rgb(241, 241, 241) 100%
+  ) 50% 50% / 100% 100% repeat;
 }
 
-.tonearm_weight::after {
+.tonearm_stand::after,
+.tonearm_wight::after {
   content: "";
   display: block;
   width: 100%;
   height: 100%;
   background: radial-gradient(
-          50% 50% at 50% 50%,
-          rgb(255, 255, 255) 29.69%,
-          rgba(255, 255, 255, 0) 97.4%
+    50% 50% at 50% 50%,
+    rgb(255, 255, 255) 29.69%,
+    rgba(255, 255, 255, 0) 97.4%
   );
+}
+.tonearm_weight {
+  top: 50px;
+  left: 20px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  z-index: 5;
+  box-shadow: -2px 0 2px rgb(0, 0, 0);
 }
 
 .tonearm_main {
-  position: absolute;
   top: -10px;
   right: 25px;
   width: 108px;
@@ -208,7 +201,6 @@ img {
 }
 
 .tonearm_handler {
-  position: absolute;
   width: 55px;
   height: 20px;
   top: 8px;
@@ -225,44 +217,7 @@ img {
   z-index: 5;
 }
 
-.tonearm_weight {
-  position: absolute;
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  z-index: 5;
-  top: 50px;
-  left: 20px;
-  background: conic-gradient(
-      rgb(241, 241, 241) 0%,
-      rgb(188, 188, 188) 20%,
-      rgb(255, 255, 255) 30%,
-      rgb(180, 180, 180) 40%,
-      rgb(255, 255, 255) 50%,
-      rgb(211, 211, 211) 60%,
-      rgb(171, 176, 175) 70%,
-      rgb(241, 241, 241) 80%,
-      rgb(171, 176, 175) 91%,
-      rgb(241, 241, 241) 100%
-    )
-    50% 50% / 100% 100% repeat;
-  box-shadow: -2px 0 2px rgb(0, 0, 0);
-}
-
-.tonearm_weight::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgb(255, 255, 255) 29.69%,
-    rgba(255, 255, 255, 0) 97.4%
-  );
-}
-
 .tonearm_hand {
-  position: absolute;
   width: 18px;
   height: 300px;
   top: 22px;
@@ -273,33 +228,24 @@ img {
 
 .tonearm_hand,
 .tonearm_headshell_bend{
-  position: absolute;
-  background: linear-gradient(
-          270deg,
-          rgb(167, 166, 167) 0%,
-          rgb(227, 227, 226) 46.87%,
-          rgb(167, 166, 167) 100%
-  );
-}
-
-.tonearm_headshell_bend {
-  position: absolute;
-  width: 15px;
-  height: 30px;
-  bottom: 75px;
-  left: 44px;
   background: linear-gradient(
     270deg,
     rgb(167, 166, 167) 0%,
     rgb(227, 227, 226) 46.87%,
     rgb(167, 166, 167) 100%
   );
+}
+
+.tonearm_headshell_bend {
+  width: 15px;
+  height: 30px;
+  bottom: 75px;
+  left: 44px;
   transform: matrix(1, 0.65, -0.35, 1, 0, 0);
   box-shadow: -2px 0 2px rgb(0, 0, 0)
 }
 
 .tonearm_headshell {
-  position: absolute;
   width: 25px;
   height: 75px;
   bottom: 0;
@@ -318,7 +264,6 @@ img {
   box-shadow: -2px 2px 4px rgb(0, 0, 0);
 }
 
-/*---------------- end of tonearm------------------*/
 
 #button {
   transform: scale(5);
@@ -345,15 +290,19 @@ img {
 
 #button-image label {
   display: block;
-  box-shadow: 0px 0px 0px 1px rgb(138, 138, 138), 0px 0px 3px 6px rgb(0, 0, 0),
-    inset 0px 1px 4px rgb(242, 242, 242);
+  box-shadow: 0 0 0 1px rgb(138, 138, 138),
+              0 0 3px 6px rgb(0, 0, 0),
+              inset 0 1px 4px rgb(242, 242, 242);
   padding: 3px;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   cursor: pointer;
   /*for mozilla + ie*/
-  background: radial-gradient(rgb(255, 255, 255) 0%, rgb(255, 255, 255) 20%, rgb(219, 219, 219) 50%
+  background: radial-gradient(
+    rgb(255, 255, 255) 0%,
+    rgb(255, 255, 255) 20%,
+    rgb(219, 219, 219) 50%
   );
   /* for other browsers*/
   background: conic-gradient(
