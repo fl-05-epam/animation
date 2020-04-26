@@ -127,7 +127,7 @@ img {
   right: 102px;
   transform: rotate(0deg);
   transform-origin: center 90px;
-  z-index: 2;
+  z-index: 3;
   transition: transform 1s linear;
 }
 
