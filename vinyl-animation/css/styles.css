@@ -97,7 +97,6 @@ img {
   box-shadow: -6px 7px 5px 0 rgba(0, 0, 0, 0.3);
 }
 
-<<<<<<< Updated upstream:css/styles.css
 .container::after {
   content: "";
   position: absolute;
@@ -106,18 +105,6 @@ img {
   z-index: 4;
   width: 16px;
   height: 16px;
-=======
-.record-shadows::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  width: 5%;
-  height: 5%;
->>>>>>> Stashed changes:vinyl-animation/css/styles.css
   border-radius: 50%;
   background: rgb(169, 169, 169);
   box-shadow: -4px 4px 2px 0 rgba(0, 0, 0, 0.5),
