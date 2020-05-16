@@ -1,4 +1,3 @@
-#Настройка: 
 
 1. Создаете локальную копию проекта 
 
@@ -9,10 +8,14 @@
     `git remote add origin <ccылка на Ваш форк>`
     
     `git remote add upstream https://github.com/fl-05-epam/animation.git`
+3. Алгоритм работы: 
+    `git checkout develop` - переключаемс на девелоп
+    
+    `git checkout -b feature/<название-ветки>` - создаем ветку для фичи и работаем в ней
 
-3. Алгоритм комита: 
+4. Алгоритм комита: 
 
-    `git pull upstream master` - стягивает изменения с основной ветки
+    `git pull upstream develop` - стягивает изменения с основной ветки
     
     `git status` - проверить, какие файлы Вы изменяли
     
@@ -20,6 +23,6 @@
 
     `git commit -am "описание того, что вы сделали"` - сохраняем изменения на ветке
 
-    `git push origin master` - отправляем изменения себе в форк
+    `git push origin feature/<название вашей ветки>` - отправляем изменения себе в форк
 
     Создать pull request в удаленном репо.
